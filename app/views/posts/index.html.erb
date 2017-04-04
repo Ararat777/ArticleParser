@@ -1,0 +1,9 @@
+<h1>Все статьи</h2>
+<% @posts.each do |post| %>
+ 
+     <h3>Название:<small class="text-info"><%= post.title %></small></h3>
+<p>Автор: <i class="text-success"><%= post.author %></i></p>
+ <i class="text-primary"><%= link_to 'Ссылка статьи', post.url %></i>
+ <hr>
+<% end %>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
